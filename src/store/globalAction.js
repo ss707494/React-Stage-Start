@@ -1,14 +1,18 @@
 /**
  * Created by Administrator on 2/16.
  */
-import {handleActions} from 'redux-actions'
+import {handleActions, createActions} from 'redux-actions'
 import Immutable from 'immutable';
 
-const GLOBAL_ACTION = 'GLOBAL_ACTION'
+const CHANGE_GLOBAL = 'CHANGE_GLOBAL'
 
 export const initState = Immutable.fromJS({
   global_state: {}
 })
 
-export const reducer_0 = handleActions({[GLOBAL_ACTION]: e => e}, initState);
+export const global_actions = createActions(CHANGE_GLOBAL);
+
+export const reducer_0 = handleActions({
+  [CHANGE_GLOBAL]: (s, {payload:{key = '-1', value}}) => s.setIn([key], value)
+}, initState);
 

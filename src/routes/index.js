@@ -6,10 +6,10 @@ export const createRoutes = (store) => ({
 	path: '/',
 	component: Layout,
 	indexRoute: Home([
-    {link: 'testDemo', name: 'testDemo'}
+    {link: 'todo', name: 'todo'}
   ]),
 	childRoutes: [
-    { path: 'testDemo', getComponent: (location, callback) => require.ensure([], require => callback(null, require('./testDemo').default(store)))},
+    { path: 'todo', getComponent: (location, callback) => require.ensure([], require => callback(null, require('./todo').default(store)))},
     require('./redirect').default()
   ]
 })

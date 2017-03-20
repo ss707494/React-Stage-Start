@@ -13,7 +13,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 const browserHistory = useRouterHistory(createHistory)({
-  basename: "/react-app-ss"
+  basename: "/react"
 });
 
 class App extends Component {
