@@ -19,8 +19,8 @@ input{
 .todo {
   text-align: center;
   div, span {
-    width: 100%;
-    height: 100%;
+    //width: 100%;
+    //height: 100%;
   }
 }
 
@@ -40,6 +40,9 @@ input{
 
 .topInput {
   position: relative;
+  .noLeft:before {
+    color: #737373;
+  }
   label {
     position: absolute;
     width: 4rem;
@@ -52,28 +55,30 @@ input{
       padding: 10px 27px 10px 27px;
     }
   }
-  input {
-    width: 100%;
-    padding: .4rem 1rem .4rem 4rem;
-    box-sizing: border-box;
-    font-size: $listHeight/2;
-    align-items: center;
-    align-content: center;
-    @include text-height($listHeight);
-    border: none;
-    background: rgba(0, 0, 0, 0.003);
-    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
-  }
+}
+
+.input-text {
+  width: 100%;
+  padding: .4rem 1rem .4rem 4rem;
+  box-sizing: border-box;
+  font-size: $listHeight/2;
+  align-items: center;
+  align-content: center;
+  @include text-height($listHeight);
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
 }
 
 .list {
   position: relative;
+  display: flex;
   text-align: left;
   border-bottom: 1px solid #ededed;
   &:last-child {
     border-bottom: none;
   }
-  input {
+  .check {
     width: 4rem;
     text-align: center;
     height: 40px;
@@ -91,9 +96,58 @@ input{
       content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
     }
   }
+  .spa {
+    width: 4rem;
+  }
+  .input-text {
+    flex: 1;
+    padding-left: .3rem;
+    border: 1px solid #999;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+  }
   label {
     font-size: $listHeight/2;
     @include text-height($listHeight);
     padding-left: 4rem;
   }
+  .complete {
+    color: #d9d9d9;
+    text-decoration: line-through;
+  }
+}
+
+.foot {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  @include text-height($listHeight*0.8);
+  div {
+    flex: 1;
+  }
+  .choose {
+    flex: 2;
+    a {
+      padding: 0 .8rem;
+    }
+  }
+  .act {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    border-color: rgba(175, 47, 47, 0.2);
+  }
+  //&:after {
+  //  content: '';
+  //  position: absolute;
+  //  right: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  height: 50px;
+  //  overflow: hidden;
+  //  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+  //  0 8px 0 -3px #f6f6f6,
+  //  0 9px 1px -3px rgba(0, 0, 0, 0.2),
+  //  0 16px 0 -6px #f6f6f6,
+  //  0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  //}
 }
